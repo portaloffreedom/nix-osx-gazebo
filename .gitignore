@@ -1,0 +1,5 @@
+# os crap
+.DS_Store
+
+# result folder created from nix-build
+result

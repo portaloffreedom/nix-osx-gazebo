@@ -1,0 +1,19 @@
+diff --git a/gazebo/common/CommonIface.hh b/gazebo/common/CommonIface.hh
+index afd23e34e..33e2a0ff1 100644
+--- a/gazebo/common/CommonIface.hh
++++ b/gazebo/common/CommonIface.hh
+@@ -20,7 +20,15 @@
+
+ #include <string>
+ #include <vector>
++
++#include <boost/version.hpp>
++#if BOOST_VERSION < 106700
+ #include <boost/uuid/sha1.hpp>
++#else
++#include <boost/uuid/detail/sha1.hpp>
++#endif
++
++#include <boost/filesystem.hpp>
+ #include <iomanip>
+ #include <sstream>
