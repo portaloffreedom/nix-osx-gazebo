@@ -49,7 +49,7 @@ in stdenv.mkDerivation rec {
     pkgconfig
     poco
     protobuf
-    qt59.qtbase
+    # qt5.qtbase
     sdformat
     tbb
     tinyxml
@@ -67,7 +67,7 @@ in stdenv.mkDerivation rec {
   meta = {
     description = "Robot Simulator";
     homepage = http://gazebosim.org/;
-    platforms = [ stdenv.lib.platforms.linux stdenv.lib.platforms.darwin ];
+    platforms = stdenv.lib.platforms.all;
     license = stdenv.lib.licenses.apache;
   };
 }

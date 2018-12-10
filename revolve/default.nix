@@ -23,6 +23,7 @@ in stdenv.mkDerivation rec {
   cmakeFlags = [ ];
   enableParallelBuilding = true;
   DYLD_LIBRARY_PATH="${tbb}/lib:${qwt6}/lib";
+  QT_PLUGIN_PATH="${qt5.qtbase.bin}/${qt5.qtbase.qtPluginPrefix}";
 
   buildInputs = [
     gcc
@@ -50,7 +51,7 @@ in stdenv.mkDerivation rec {
   meta = {
   description = "Robot evolution framework for http://evosphere.eu/";
   homepage = https://github.com/ci-group/revolve;
-  platforms = [ stdenv.lib.platforms.linux stdenv.lib.platforms.darwin ];
+  platforms = stdenv.lib.platforms.all;
   license = stdenv.lib.licenses.apache;
   };
 }
